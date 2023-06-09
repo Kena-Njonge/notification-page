@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Notifications page</title>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+    <div class="notif-view-container">
+      <div class="notif-header">
+        <h1 class="notif-title">Notifications</h1>
+        <div class="notif-unread-number">3</div>
+        <button class="btn" onclick="markAll()">Mark all as read</button>
+      </div>
+      <div class="notif-container">
+        <div class="notif-unread" id="unread0" onclick="unread('unread0')">
+          <div class="notif-img-container">
+            <img class="notif-img" src="./assets/images/avatar-mark-webber.webp" alt="avatar">
+          </div>
+          <div class="notif-content">
+            <div class="notif-content-header">
+              <h3 class="avatar-name">Mark Weber</h3>
+              <p class="notif-content-text">reacted to your recent post <span style="color:var(--DarkGrayishBlue)">My first tournament today</span></p>
+              <h1 class="notif-status">.</h1>
+              <p class="notif-time">1m ago</p>
+            </div>
+          </div>
+        </div>
+        <div class="notif-unread" id="unread1" onclick="unread('unread1')">
+          <div class="notif-img-container">
+            <img class="notif-img" src="./assets/images/avatar-angela-gray.webp" alt="avatar">
+          </div>
+          <div class="notif-content">
+            <div class="notif-content-header">
+              <h3 class="avatar-name">Angela Gray</h3>
+              <p class="notif-content-text">followed you</p>
+              <h1 class="notif-status">.</h1>
+              <p class="notif-time">5m ago</p>
+            </div>
+          </div>
+        </div>
+        <div class="notif-unread" id="unread2" onclick="unread('unread2')">
+          <div class="notif-img-container">
+            <img class="notif-img" src="./assets/images/avatar-jacob-thompson.webp" alt="avatar">
+          </div>
+          <div class="notif-content">
+            <div class="notif-content-header">
+              <h3 class="avatar-name">Jacob Thompson</h3>
+              <p class="notif-content-text">has joined your group<span style="color:var(--Blue); font-weight: 800"> Chess club</span></p>
+              <h1 class="notif-status">.</h1>
+              <p class="notif-time">1 day ago</p>
+            </div>
+          </div>
+        </div>
+        <div class="notif">
+          <div class="notif-img-container">
+            <img class="notif-img" src="./assets/images/avatar-rizky-hasanuddin.webp" alt="avatar">
+          </div>
+          <div class="notif-content">
+            <div class="notif-content-header">
+              <h3 class="avatar-name">Rizky Hasanuddin</h3>
+              <p class="notif-content-text">sent you a private message</p>
+              <h1 class="notif-status">.</h1>
+              <p class="notif-time">5 days ago</p>
+            </div>
+            <div class="message">Hello, thanks for setting up the Chess Club. I've been a member...</div>
+          </div>
+        </div>
+        <div class="notif">
+          <div class="notif-img-container">
+            <img class="notif-img" src="./assets/images/avatar-kimberly-smith.webp" alt="avatar">
+          </div>
+          <div class="notif-content-image">
+            <div class="notif-content-header">
+              <h3 class="avatar-name">Kimberly Smith</h3>
+              <p class="notif-content-text">commented on your picture</p>
+              <h1 class="notif-status">.</h1>
+              <p class="notif-time">1 week ago</p>
+            </div>
+            <div class="post-image-container" style="display: inline-flex; height: 100%;"><img class="post-image"src="./assets/images/image-chess.webp"></div> 
+          </div>
+        </div>
+        <div class="notif">
+          <div class="notif-img-container">
+            <img class="notif-img" src="./assets/images/avatar-nathan-peterson.webp" alt="avatar">
+          </div>
+          <div class="notif-content">
+            <div class="notif-content-header">
+              <h3 class="avatar-name">Nathan Peterson</h3>
+              <p class="notif-content-text">reacted to to your recent post <span style="color: var(--DarkGrayishBlue);">5 end-game strategies to increase your win rate</span> </p>
+              <h1 class="notif-status">.</h1>
+              <p class="notif-time">1 week ago</p>
+            </div>
+          </div>
+        </div>
+        <div class="notif">
+          <div class="notif-img-container">
+            <img class="notif-img" src="./assets/images/avatar-anna-kim.webp" alt="avatar">
+          </div>
+          <div class="notif-content">
+            <div class="notif-content-header">
+              <h3 class="avatar-name">Anna Kim</h3>
+              <p class="notif-content-text">left the group<span style="color:var(--Blue); font-weight: 800"> Chess Club</span></p>
+              <h1 class="notif-status">.</h1>
+              <p class="notif-time">2 weeks ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+  <div class="attribution" style="color: var(--Blue); position: relative; top: 70px;">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Kena Njonge</a>.
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>

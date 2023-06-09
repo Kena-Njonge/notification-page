@@ -1,0 +1,232 @@
+:root {
+    --White: hsl(0, 0%, 100%);
+    --VeryLGBlue: hsl(210, 60%, 98%);
+    --LightGBlue1: hsl(211, 68%, 94%);
+    --LightGBlue2: hsl(205, 33%, 90%);
+    --GrayishBlue: hsl(219, 14%, 63%);
+    --DarkGrayishBlue: hsl(219, 12%, 42%);
+    --VeryDarkBlue: hsl(224, 21%, 14%);
+    --Red: hsl(1, 90%, 64%);
+    --Blue: hsl(219, 85%, 26%);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--VeryLGBlue);
+  }
+  
+  .notif-view-container {
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    width: 40vw;
+    height: 100vh;
+    background-color: var(--White);
+    margin: auto;
+    position: relative;
+    top: 40px;
+    border-radius: 20px;
+  }
+  
+  .notif-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .notif-img-container,
+  .avatar-name,
+  .notif-content,
+  .notif-content-header,
+  .notif-status,
+  .notif-title,
+  .notif-unread-number,
+  .btn {
+    display: inline-block;
+  }
+  .notif-content-text{
+    display: inline;
+  }
+  .avatar-name:hover{
+    color: var(--Blue);
+    cursor: pointer;
+  }
+  .post-name:hover{
+    color: var(--Blue);
+    cursor: pointer;
+  }
+
+  
+  .notif {
+    width: 80%;
+    height: 8%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    padding-left: 10px;
+    font-weight: 500;
+  }
+  
+  .notif-img-container {
+    height: 50% !important;
+    position: relative;
+    top: 15%;
+  }
+  
+  .notif-img {
+    max-height: 100% !important;
+    object-fit: cover;
+  }
+  
+  .notif-header {
+    margin: auto;
+    width: 80%;
+    position: relative;
+    top: 25%;
+    right: 5%;
+  }
+  .notif-content-image{
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+  }
+  
+  .notif-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    justify-content: left;
+  }
+  
+  .notif-content-text {
+    color: var(--GrayishBlue);
+  }
+  
+  .notif-unread-number {
+    background-color: var(--Blue);
+    color: var(--White);
+    border-radius: 20%;
+    width: 4%;
+    height: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 5px;
+
+    position: relative;
+    bottom: 3px;
+  }
+  
+  .btn {
+    position: relative;
+    bottom: 3px;
+    left: 60%;
+    background-color: white;
+    border-style: none;
+    color: var(--DarkGrayishBlue);
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .avatar-name,
+  .notif-content-text,
+  .notif-status,
+  .message {
+    font-size: 15px;
+    margin-bottom: 0px;
+  }
+  .message{
+    color: var(--GrayishBlue);
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--LightGBlue1);
+    margin-top: 5px;
+  }
+  
+  .notif-time {
+    font-size: 15px;
+    color: var(--GrayishBlue);
+    margin-top: 0;
+    margin-bottom: 0px;
+  }
+  .post-image{
+    max-height: 50% !important;
+    object-fit: cover;
+
+  }
+  .post-image-container{
+   justify-content: flex-end;
+  }
+  
+  .notif-unread {
+    width: 80%;
+    height: 8%;
+    margin: auto;
+    position: relative;
+    top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    background-color: var(--LightGBlue2);
+    padding-left: 10px;
+    border-radius: 10px;
+    padding-bottom: 15px;
+  }
+  .notif-unread:hover {
+    cursor: pointer;
+  }
+  
+  .notif-status {
+    color: var(--Red);
+    font-weight: 500;
+    font-size: 30px;
+    position: relative;
+    bottom: 3px;
+    display: inline;
+  }
+  
+  /* Responsive Styles */
+  
+  @media screen and (max-width: 768px) {
+    .notif-view-container {
+      width: 90vw;
+    }
+  
+    .notif-title {
+      font-size: 24px;
+    }
+  
+    .notif-unread,
+    .notif {
+      flex-direction: column;
+    }
+  
+    .notif-img-container {
+      top: 20%;
+    }
+    .notif-img {
+        max-height: 50% !important;
+        object-fit: cover;
+    }
+    .avatar-name{
+        margin-bottom: 0%;
+    }
+    .notif-content-text{
+        display: inline;
+        position: relative;
+        margin-top: 0%;
+    }
+
+    .notif-unread-number {
+      width: 10%;
+    }
+  
+    .btn {
+        left: 80%;
+        top: -40px;
+    }
+    .post-image-container{
+        position: relative;
+        top: 20px;
+    }
+  }
+  
